@@ -1,0 +1,30 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text center">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Title</th>
+                <th>Orders</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Employee item in Model)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Title</td>
+                    <td>@item.EmployeeId</td>
+                    <td><a asp-controller="Home" asp-action="Order" asp-route-id="@item.EmployeeId">Go to orders.</a></td>                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

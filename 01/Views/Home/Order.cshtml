@@ -1,0 +1,23 @@
+﻿@model List<Order>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>OrderNo</th>
+            <th>OrderDate</th>
+            <th>OrderCountry</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            @foreach(Order item in Model)
+            {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+                <td>@item.ShipCountry</td>
+            </tr>
+            }
+    </tbody>
+</table>
